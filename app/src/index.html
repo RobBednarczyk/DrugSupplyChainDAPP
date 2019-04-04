@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Drug Supply Chain DAPP</title>
+        <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    </head>
+    <body>
+        <div class="welcomeHeader">
+            <h1>Drug Supply Chain</h1>
+            <p>Prove the authenticity and provenance of a drug using Ethereum blockchain</p>
+        </div>
+
+        <div class="userInfoBox">
+            <h2>Current Address:</h2>
+            <p id="currentAddress"></p>
+            <h2>You are logged as:</h2>
+            <p id="currentRole"></p>
+            <div class="signInPanel">
+                <label for="signInRole">Select role:</label>
+                <select id="signInRole">
+                    <option value="Pharmaceutical Company">Pharmaceutical Company</option>
+                    <option value="MVO">MVO</option>
+                    <option value="Wholesale Company">Wholesale Company</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Client">Client</option>
+                </select>
+                <button id="logInBtn" onclick="App.signInAs()">Sign In</button>
+            </div>
+
+
+        </div>
+
+        <div class="actionPanel">
+            <div class="discoverDrug">
+                <h2>Discover a new drug</h2>
+                <label for="drugName">Drug name:</label><input type="text" id="drugName"></input>
+                <label for="origPharmaName">Pharma name:</label><input type="text" id="origPharmaName"></input>
+                <label for="origPharmaInfo">Pharma info:</label><input type="text" id="origPharmaInfo"></input>
+                <label for="activeIngredient">Active ingredient:</label>
+                <select id="activeIngredient">
+                </select>
+                <button id="discoverDrug" onclick="App.discoverDrug()">Discover</button>
+            </div>
+            <div class="addUniqueID">
+                <h2>Add unique code (only MVOs)</h2>
+                <label for="UPCaddCode">UPC:</label><input type="text" id="UPCaddCode" placeholder="UPC"></input>
+                <button id="addUniqueID" onclick="App.addUniqueID()">Start validation</button>
+            </div>
+            <div class="produceDrug">
+                <h2>Produce drug</h2>
+                <label for="UPCproduce">UPC:</label><input type="text" id="UPCproduce" placeholder="UPC"></input>
+                <label for="drugPrice">Price (wei):</label><input type="text" id="drugPrice" placeholder="Price"></input>
+                <label for="drugNotes">Notes:</label><input type="text" id="drugNotes" placeholder="Notes"></input>
+                <button id="produceDrug" onclick="App.produceDrug()">Start production</button>
+            </div>
+            <div class="setForWholeSale">
+                <h2>Set for wholesale</h2>
+                <label for="UPCforWholeSale">UPC:</label><input type="text" id="UPCforWholeSale"></input>
+                <button id="setForWholeSale" onclick="App.setForWholeSale()">Set for wholesale</button>
+            </div>
+            <div class="buyDrug">
+                <h2>Buy a drug</h2>
+                <label for="drugUPCToBuy">UPC:</label><input type="text" id="drugUPCToBuy"></input>
+                <label for="valueToPay">Pay:</label><input type="text" id="valueToPay"></input>
+                <button id="buyDrug" onclick="App.buyDrug()">Buy drug</button>
+            </div>
+        </div>
+
+        <div class="drugsListBox">
+            <h2>Discovered Drugs</h2>
+            <button id="showDiscoveredDrugs" onclick="App.updateDrugsList()">Show drugs</button>
+            <table id="drugsListTable">
+                <tr>
+                    <th>UPC</th>
+                    <th>Name</th>
+                    <th>MVO Code</th>
+                    <th>Price (wei)</th>
+                    <th>Action</th>
+                </tr>
+
+            </table>
+        </div>
+        <div class="drugDetails">
+            <h2>Drug Transaction History</h2>
+            <table id="drugDetailsTable">
+                <tr>
+                    <th>#</th>
+                    <th>Status</th>
+                    <th>Tx Hash</th>
+                    <th>Current Owner</th>
+                </tr>
+            </table>
+        </div>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 5px;
+}
+
+.welcomeHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.welcomeHeader p {
+    border-bottom: 2px solid #4db8ff;
+}
+
+.userInfoBox, .drugsListBox, .drugDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.actionPanel {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #4db8ff;
+}
+
+.actionPanel div {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.actionPanel div h2 {
+    text-align: center;
+    border-bottom: 2px solid #4db8ff;
+}
+
+.actionPanel div label {
+    margin: 5px;
+}
+
+#discoverDrug {
+    margin: 10px;
+}
+
+.drugsListBox button {
+    margin: 10px;
+}
+
+.drugsListTable, .drugDetailsTable {
+    width: 50%;
+}
+.drugsListTable td, .drugDetailsTable td {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+.drugsListTable tr:nth-child(even), .drugDetailsTable tr:nth-child(even) {
+    background-color: #4db8ff;
+}
