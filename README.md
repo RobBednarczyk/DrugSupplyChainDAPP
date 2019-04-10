@@ -37,7 +37,10 @@ $ npm run dev
 The front end is served on http://localhost:8080/
 Users are advised to use *Metamask* browser plugin in order to connect to Rinkeby TestNet
 
-After choosing an account with valid Ether a user can choose to log in as one of the roles described before.
+After selecting an account with valid Ether a user can choose to log in as one of the roles described before.
+
+![](images/UserDashboard.png)
+
 The full supply chain looks as follows:
 
 1. **PharmaCompany** discovers a drug
@@ -48,10 +51,18 @@ The full supply chain looks as follows:
 6. **Pharmacy** buys the drug and sets it on sale
 7. **Client** buys the drug
 
-After logging in a user (acocunt) cannot change the previously chosen role.
+Functional panel where a user can submit a transaction:
+![](images/FunctionalPanel.png)
+
+After logging in a user (account) cannot change the previously chosen role.
 There is a 1 to 1 relation between an ethereum account and a role in the supply chain DAPP.
 A user should refresh the browser after every transaction in order to see all the changes
-The
+
+Every user is able to see the whole list of discovered drugs:
+![](images/DiscoveredDrugsList.png)
+
+and the details of every transaction associated with a particular drug:
+![](images/TransactionsList.png)
 
 ## Technical details
 
