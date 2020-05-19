@@ -1,0 +1,2244 @@
+{
+  "contractName": "PharmacyRole",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PharmacyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PharmacyRemoved",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isPharmacy",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addPharmacy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "removePharmacy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610434806100206000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063afd675f81461005c578063dfb0fda3146100ad578063f09b07bf14610116575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061012d565b005b3480156100b957600080fd5b506100fc600480360360208110156100d057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610139565b604051808215151515815260200191505060405180910390f35b34801561012257600080fd5b5061012b610156565b005b61013681610161565b50565b600061014f8260006101bb90919063ffffffff16565b9050919050565b61015f3361024f565b565b6101758160006102a990919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe6c049ab5a3c2ae523452b89e43795966fec2f89b7bf443d91781a7c696d301760405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156101f857600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61026381600061035990919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f46520b63a5e163f23aef94d996e90fbbec9b8959d1dd37aeb9bcb5a3a20ac5c960405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156102e557600080fd5b6102ef82826101bb565b1515156102fb57600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561039557600080fd5b61039f82826101bb565b15156103aa57600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a72305820a87042b32f40bcf5db7d6045242f6a8ac0767ccfaeda16ef406700037deafa8a0029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063afd675f81461005c578063dfb0fda3146100ad578063f09b07bf14610116575b600080fd5b34801561006857600080fd5b506100ab6004803603602081101561007f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061012d565b005b3480156100b957600080fd5b506100fc600480360360208110156100d057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610139565b604051808215151515815260200191505060405180910390f35b34801561012257600080fd5b5061012b610156565b005b61013681610161565b50565b600061014f8260006101bb90919063ffffffff16565b9050919050565b61015f3361024f565b565b6101758160006102a990919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe6c049ab5a3c2ae523452b89e43795966fec2f89b7bf443d91781a7c696d301760405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156101f857600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61026381600061035990919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f46520b63a5e163f23aef94d996e90fbbec9b8959d1dd37aeb9bcb5a3a20ac5c960405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156102e557600080fd5b6102ef82826101bb565b1515156102fb57600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561039557600080fd5b61039f82826101bb565b15156103aa57600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fea165627a7a72305820a87042b32f40bcf5db7d6045242f6a8ac0767ccfaeda16ef406700037deafa8a0029",
+  "sourceMap": "157:1620:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;157:1620:4;;;;;;;",
+  "deployedSourceMap": "157:1620:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1028:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1028:79:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1028:79:4;;;;;;;;;;;;;;;;;;;;;;860:107;;8:9:-1;5:2;;;30:1;27;20:12;5:2;860:107:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;860:107:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1173:73;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1173:73:4;;;;;;1028:79;1081:21;1094:7;1081:12;:21::i;:::-;1028:79;:::o;860:107::-;918:4;939:23;954:7;939:10;:14;;:23;;;;:::i;:::-;932:30;;860:107;;;:::o;1173:73::-;1214:27;1230:10;1214:15;:27::i;:::-;1173:73::o;1340:205::-;1482:23;1497:7;1482:10;:14;;:23;;;;:::i;:::-;1532:7;1518:22;;;;;;;;;;;;1340:205;:::o;726:166:5:-;810:4;851:1;832:21;;:7;:21;;;;824:30;;;;;;;;867:4;:11;;:20;879:7;867:20;;;;;;;;;;;;;;;;;;;;;;;;;860:27;;726:166;;;;:::o;1648:127:4:-;1707:26;1725:7;1707:10;:17;;:26;;;;:::i;:::-;1762:7;1746:24;;;;;;;;;;;;1648:127;:::o;245:167:5:-;336:1;317:21;;:7;:21;;;;309:30;;;;;;;;354:18;358:4;364:7;354:3;:18::i;:::-;353:19;345:28;;;;;;;;403:4;380;:11;;:20;392:7;380:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;245:167;;:::o;478:170::-;572:1;553:21;;:7;:21;;;;545:30;;;;;;;;589:18;593:4;599:7;589:3;:18::i;:::-;581:27;;;;;;;;638:5;615:4;:11;;:20;627:7;615:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;478:170;;:::o",
+  "source": "pragma solidity >=0.4.24;\n\n// Import the library 'Roles'\nimport \"./Roles.sol\";\n\n// Define a contract 'PharmacyRole' to manage this role - add, remove, check\ncontract PharmacyRole {\n  using Roles for Roles.Role;\n\n  // Define 2 events, one for Adding, and other for Removing\n  event PharmacyAdded(address indexed account);\n  event PharmacyRemoved(address indexed account);\n\n  // Define a struct 'pharmacies' by inheriting from 'Roles' library, struct Role\n  Roles.Role private pharmacies;\n\n  // In the constructor make the address that deploys this contract the 1st Pharmacy\n  /*constructor() public {\n      _addPharmacy(msg.sender);\n  }*/\n\n  // Define a modifier that checks to see if msg.sender has the appropriate role\n  modifier onlyPharmacies() {\n      require(isPharmacy(msg.sender));\n      _;\n  }\n\n  // Define a function 'isPharmacy' to check this role\n  function isPharmacy(address account) public view returns (bool) {\n      return pharmacies.has(account);\n  }\n\n  // Define a function 'addPharmacy' that adds this role\n  function addPharmacy(address account) public {\n      _addPharmacy(account);\n  }\n\n  // Define a function 'removePharmacy' to renounce this role\n  function removePharmacy() public {\n      _removePharmacy(msg.sender);\n  }\n\n  // Define an internal function '_addPharmacy' to add this role, called by 'addPharmacy'\n  function _addPharmacy(address account) internal {\n      // \"using Roles for Roles.Role\" statement enables the following syntactic sugar\n      pharmacies.add(account);\n      emit PharmacyAdded(account);\n  }\n\n  // Define an internal function '_removePharmacy' to remove this role, called by 'removePharmacy'\n  function _removePharmacy(address account) internal {\n      pharmacies.remove(account);\n      emit PharmacyRemoved(account);\n  }\n}\n",
+  "sourcePath": "/home/robert/Documents/Udacity/Blockchain/Project6/DrugSupplyChain/contracts/accesscontrol/PharmacyRole.sol",
+  "ast": {
+    "absolutePath": "/home/robert/Documents/Udacity/Blockchain/Project6/DrugSupplyChain/contracts/accesscontrol/PharmacyRole.sol",
+    "exportedSymbols": {
+      "PharmacyRole": [
+        433
+      ]
+    },
+    "id": 434,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 343,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:4"
+      },
+      {
+        "absolutePath": "/home/robert/Documents/Udacity/Blockchain/Project6/DrugSupplyChain/contracts/accesscontrol/Roles.sol",
+        "file": "./Roles.sol",
+        "id": 344,
+        "nodeType": "ImportDirective",
+        "scope": 434,
+        "sourceUnit": 528,
+        "src": "57:21:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 433,
+        "linearizedBaseContracts": [
+          433
+        ],
+        "name": "PharmacyRole",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 347,
+            "libraryName": {
+              "contractScope": null,
+              "id": 345,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 527,
+              "src": "189:5:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$527",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "183:27:4",
+            "typeName": {
+              "contractScope": null,
+              "id": 346,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 440,
+              "src": "199:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$440_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 351,
+            "name": "PharmacyAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 349,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "295:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 348,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "295:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "294:25:4"
+            },
+            "src": "275:45:4"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 355,
+            "name": "PharmacyRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 354,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 353,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 355,
+                  "src": "345:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 352,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "344:25:4"
+            },
+            "src": "323:47:4"
+          },
+          {
+            "constant": false,
+            "id": 357,
+            "name": "pharmacies",
+            "nodeType": "VariableDeclaration",
+            "scope": 433,
+            "src": "456:29:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$440_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 356,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 440,
+              "src": "456:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$440_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 367,
+              "nodeType": "Block",
+              "src": "748:53:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 361,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2181,
+                              "src": "775:3:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 362,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "775:10:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 360,
+                          "name": "isPharmacy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 381,
+                          "src": "764:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 363,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "764:22:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 359,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2184,
+                        2185
+                      ],
+                      "referencedDeclaration": 2184,
+                      "src": "756:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 364,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "756:31:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 365,
+                  "nodeType": "ExpressionStatement",
+                  "src": "756:31:4"
+                },
+                {
+                  "id": 366,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "795:1:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 368,
+            "name": "onlyPharmacies",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 358,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:2:4"
+            },
+            "src": "722:79:4",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 380,
+              "nodeType": "Block",
+              "src": "924:43:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 377,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 370,
+                        "src": "954:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 375,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "939:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 526,
+                      "src": "939:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 378,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "939:23:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 374,
+                  "id": 379,
+                  "nodeType": "Return",
+                  "src": "932:30:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 381,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 370,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "880:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 369,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "879:17:4"
+            },
+            "returnParameters": {
+              "id": 374,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 373,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "918:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "918:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "917:6:4"
+            },
+            "scope": 433,
+            "src": "860:107:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 390,
+              "nodeType": "Block",
+              "src": "1073:34:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 387,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "1094:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 386,
+                      "name": "_addPharmacy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 416,
+                      "src": "1081:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 388,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1081:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 389,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1081:21:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 391,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 384,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 383,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 391,
+                  "src": "1049:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1049:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1048:17:4"
+            },
+            "returnParameters": {
+              "id": 385,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1073:0:4"
+            },
+            "scope": 433,
+            "src": "1028:79:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 399,
+              "nodeType": "Block",
+              "src": "1206:40:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 395,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2181,
+                          "src": "1230:3:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 396,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1230:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 394,
+                      "name": "_removePharmacy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 432,
+                      "src": "1214:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 397,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1214:27:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 398,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1214:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 400,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removePharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 392,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1196:2:4"
+            },
+            "returnParameters": {
+              "id": 393,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1206:0:4"
+            },
+            "scope": 433,
+            "src": "1173:73:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 415,
+              "nodeType": "Block",
+              "src": "1388:157:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 408,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 402,
+                        "src": "1497:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 405,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "1482:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 407,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 472,
+                      "src": "1482:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 409,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1482:23:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 410,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1482:23:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 412,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 402,
+                        "src": "1532:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 411,
+                      "name": "PharmacyAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "1518:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 413,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1518:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 414,
+                  "nodeType": "EmitStatement",
+                  "src": "1513:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 416,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 402,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 416,
+                  "src": "1362:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1361:17:4"
+            },
+            "returnParameters": {
+              "id": 404,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1388:0:4"
+            },
+            "scope": 433,
+            "src": "1340:205:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 431,
+              "nodeType": "Block",
+              "src": "1699:76:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 424,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 418,
+                        "src": "1725:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 421,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "1707:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 423,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 503,
+                      "src": "1707:17:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 425,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1707:26:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 426,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1707:26:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 428,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 418,
+                        "src": "1762:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 427,
+                      "name": "PharmacyRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 355,
+                      "src": "1746:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 429,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1746:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 430,
+                  "nodeType": "EmitStatement",
+                  "src": "1741:29:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 432,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removePharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 418,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 432,
+                  "src": "1673:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 417,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1673:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1672:17:4"
+            },
+            "returnParameters": {
+              "id": 420,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1699:0:4"
+            },
+            "scope": 433,
+            "src": "1648:127:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 434,
+        "src": "157:1620:4"
+      }
+    ],
+    "src": "0:1778:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/robert/Documents/Udacity/Blockchain/Project6/DrugSupplyChain/contracts/accesscontrol/PharmacyRole.sol",
+    "exportedSymbols": {
+      "PharmacyRole": [
+        433
+      ]
+    },
+    "id": 434,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 343,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:4"
+      },
+      {
+        "absolutePath": "/home/robert/Documents/Udacity/Blockchain/Project6/DrugSupplyChain/contracts/accesscontrol/Roles.sol",
+        "file": "./Roles.sol",
+        "id": 344,
+        "nodeType": "ImportDirective",
+        "scope": 434,
+        "sourceUnit": 528,
+        "src": "57:21:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 433,
+        "linearizedBaseContracts": [
+          433
+        ],
+        "name": "PharmacyRole",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 347,
+            "libraryName": {
+              "contractScope": null,
+              "id": 345,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 527,
+              "src": "189:5:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$527",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "183:27:4",
+            "typeName": {
+              "contractScope": null,
+              "id": 346,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 440,
+              "src": "199:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$440_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 351,
+            "name": "PharmacyAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 349,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "295:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 348,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "295:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "294:25:4"
+            },
+            "src": "275:45:4"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 355,
+            "name": "PharmacyRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 354,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 353,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 355,
+                  "src": "345:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 352,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "345:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "344:25:4"
+            },
+            "src": "323:47:4"
+          },
+          {
+            "constant": false,
+            "id": 357,
+            "name": "pharmacies",
+            "nodeType": "VariableDeclaration",
+            "scope": 433,
+            "src": "456:29:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$440_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 356,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 440,
+              "src": "456:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$440_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 367,
+              "nodeType": "Block",
+              "src": "748:53:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 361,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2181,
+                              "src": "775:3:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 362,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "775:10:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 360,
+                          "name": "isPharmacy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 381,
+                          "src": "764:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 363,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "764:22:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 359,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        2184,
+                        2185
+                      ],
+                      "referencedDeclaration": 2184,
+                      "src": "756:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 364,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "756:31:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 365,
+                  "nodeType": "ExpressionStatement",
+                  "src": "756:31:4"
+                },
+                {
+                  "id": 366,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "795:1:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 368,
+            "name": "onlyPharmacies",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 358,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:2:4"
+            },
+            "src": "722:79:4",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 380,
+              "nodeType": "Block",
+              "src": "924:43:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 377,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 370,
+                        "src": "954:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 375,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "939:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 526,
+                      "src": "939:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 378,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "939:23:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 374,
+                  "id": 379,
+                  "nodeType": "Return",
+                  "src": "932:30:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 381,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 370,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "880:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 369,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "879:17:4"
+            },
+            "returnParameters": {
+              "id": 374,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 373,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "918:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "918:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "917:6:4"
+            },
+            "scope": 433,
+            "src": "860:107:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 390,
+              "nodeType": "Block",
+              "src": "1073:34:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 387,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "1094:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 386,
+                      "name": "_addPharmacy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 416,
+                      "src": "1081:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 388,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1081:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 389,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1081:21:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 391,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 384,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 383,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 391,
+                  "src": "1049:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1049:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1048:17:4"
+            },
+            "returnParameters": {
+              "id": 385,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1073:0:4"
+            },
+            "scope": 433,
+            "src": "1028:79:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 399,
+              "nodeType": "Block",
+              "src": "1206:40:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 395,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2181,
+                          "src": "1230:3:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 396,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1230:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 394,
+                      "name": "_removePharmacy",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 432,
+                      "src": "1214:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 397,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1214:27:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 398,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1214:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 400,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removePharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 392,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1196:2:4"
+            },
+            "returnParameters": {
+              "id": 393,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1206:0:4"
+            },
+            "scope": 433,
+            "src": "1173:73:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 415,
+              "nodeType": "Block",
+              "src": "1388:157:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 408,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 402,
+                        "src": "1497:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 405,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "1482:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 407,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 472,
+                      "src": "1482:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 409,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1482:23:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 410,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1482:23:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 412,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 402,
+                        "src": "1532:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 411,
+                      "name": "PharmacyAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "1518:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 413,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1518:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 414,
+                  "nodeType": "EmitStatement",
+                  "src": "1513:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 416,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addPharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 402,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 416,
+                  "src": "1362:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1361:17:4"
+            },
+            "returnParameters": {
+              "id": 404,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1388:0:4"
+            },
+            "scope": 433,
+            "src": "1340:205:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 431,
+              "nodeType": "Block",
+              "src": "1699:76:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 424,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 418,
+                        "src": "1725:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 421,
+                        "name": "pharmacies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 357,
+                        "src": "1707:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$440_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 423,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 503,
+                      "src": "1707:17:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$440_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$440_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 425,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1707:26:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 426,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1707:26:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 428,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 418,
+                        "src": "1762:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 427,
+                      "name": "PharmacyRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 355,
+                      "src": "1746:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 429,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1746:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 430,
+                  "nodeType": "EmitStatement",
+                  "src": "1741:29:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 432,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removePharmacy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 418,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 432,
+                  "src": "1673:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 417,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1673:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1672:17:4"
+            },
+            "returnParameters": {
+              "id": 420,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1699:0:4"
+            },
+            "scope": 433,
+            "src": "1648:127:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 434,
+        "src": "157:1620:4"
+      }
+    ],
+    "src": "0:1778:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.2",
+  "updatedAt": "2019-04-03T23:19:24.034Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
